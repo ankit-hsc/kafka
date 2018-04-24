@@ -1,0 +1,12 @@
+
+http://nverma-tech-blog.blogspot.in/2015/10/apache-kafka-quick-start-on-windows.html
+
+
+<cmd code>
+<kafka_dir>\bin\windows\zookeeper-server-start.bat ..\..\config\zookeeper.properties
+<kafka_dir>\bin\windows\kafka-server-start.bat ..\..\config\server.properties
+
+<kafka_dir>\bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic mytopic
+
+<kafka_dir>\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic mytopic
+<kafka_dir>\bin\windows\kafka-console-consumer.bat --zookeeper localhost:2181 --topic mytopic
